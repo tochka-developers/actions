@@ -1,2 +1,2 @@
-# tochka-developers/actions
-Default workflows for  tochka-developers repositories
+# GitHub Actions workflows
+Default workflows for  `tochka-developers` repositories
