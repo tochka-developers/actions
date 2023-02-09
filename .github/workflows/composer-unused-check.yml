@@ -57,4 +57,5 @@ jobs:
         working-directory: './'
 
       - name: 'Check composer unused packages'
+        working-directory: './'
         run: composer-unused
