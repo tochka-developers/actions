@@ -43,7 +43,7 @@ jobs:
           php-version: '${{ inputs.php-version }}'
           extensions: '${{ inputs.php-extensions }}'
           ini-values: memory_limit=-1
-          tools: composer, pint
+          tools: composer:v2
           coverage: none
 
       - name: 'Setup problem matchers for PHP (aka PHP error logs)'
@@ -53,8 +53,8 @@ jobs:
         run: 'echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"'
 
       - name: 'Install PHP dependencies with Composer'
-        run: composer install --prefer-dist --no-progress --no-suggest --optimize-autoloader
+        run: composer install --prefer-dist --no-progress --optimize-autoloader
         working-directory: './'
 
       - name: 'Linting PHP source files'
-        run: pint
+        run: composer lint
